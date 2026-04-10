@@ -1,10 +1,7 @@
 package niccolosorrenti.u5d5_progetto.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -19,6 +16,7 @@ public class Prenotazione {
 
     @Id
     @GeneratedValue
+    @Setter(AccessLevel.NONE)
     private UUID prenotazione_id;
 
     private LocalDate data;

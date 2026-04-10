@@ -1,10 +1,7 @@
 package niccolosorrenti.u5d5_progetto.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import niccolosorrenti.u5d5_progetto.enums.TipoPostazione;
 
 import java.util.List;
@@ -19,6 +16,7 @@ public class Postazione {
 
     @Id
     @GeneratedValue
+    @Setter(AccessLevel.NONE)
     private UUID postazione_id;
 
     private String descrizione;
