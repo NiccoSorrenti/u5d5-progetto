@@ -31,14 +31,14 @@ public class PrenotazioneService {
 
         Postazione postazione = postazioneRepository.findById(postazioneId).orElseThrow(() -> new RuntimeException("Postazione non trovata"));
 
-        //controllo 1: postazione occupata
+        // postazione occupata
         if (prenotazioneRepository.existsByPostazioneAndData(postazione, data)) {
             throw new RuntimeException("Postazione già occupata");
         }
 
-        //controllo 2: utente già prenotato quel giorno
+        // utente già prenotato quel giorno
         if (prenotazioneRepository.existsByUtenteAndData(utente, data)) {
-            throw new RuntimeException("Utente già ha una prenotazione in questa data");
+            throw new RuntimeException("L'Utente ha già una prenotazione in questa data");
         }
 
         Prenotazione p = new Prenotazione();

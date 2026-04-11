@@ -9,5 +9,5 @@ import java.util.UUID;
 
 public interface PostazioneRepository extends JpaRepository<Postazione, UUID> {
 
-    List<Postazione> findByTipoAndEdificio_Citta(TipoPostazione tipoPostazione, String citta);
+    List<Postazione> findByTipoPostazioneAndEdificio_Citta(TipoPostazione tipoPostazione, String citta);
 }
